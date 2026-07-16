@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Remap indigo to Hospital Santa Marcelina brand colors for cohesive corporate styling */
+  --color-indigo-50: #f0f4f8;
+  --color-indigo-100: #dbe6f0;
+  --color-indigo-200: #bdcfe2;
+  --color-indigo-300: #8fa9c4; /* Santa Marcelina Muted Steel Blue */
+  --color-indigo-400: #5d80a6;
+  --color-indigo-500: #004785;
+  --color-indigo-600: #003b73; /* Santa Marcelina Brand Deep Blue */
+  --color-indigo-700: #002f5c;
+  --color-indigo-800: #002244;
+  --color-indigo-900: #00152b;
+  --color-indigo-950: #000b17;
+}
+
+/* Base style adjustments for a cleaner premium feel */
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
