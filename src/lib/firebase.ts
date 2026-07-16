@@ -14,7 +14,10 @@ import {
   updateDoc, 
   deleteDoc, 
   addDoc, 
-  getDoc 
+  getDoc,
+  initializeFirestore,
+  persistentLocalCache,
+  persistentMultipleTabManager
 } from 'firebase/firestore';
 import firebaseConfig from '../../firebase-applet-config.json';
 import { 
@@ -32,7 +35,20 @@ import { Collaborator, InventoryItem, Equipment, AdminUser, SystemSettings, Bran
 
 // Initialize Firebase
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-export const db = getFirestore(app);
+
+let dbInstance;
+try {
+  dbInstance = initializeFirestore(app, {
+    localCache: persistentLocalCache({
+      tabManager: persistentMultipleTabManager()
+    })
+  });
+} catch (e) {
+  console.warn("Could not initialize persistent local cache, falling back to default Firestore:", e);
+  dbInstance = getFirestore(app);
+}
+
+export const db = dbInstance;
 
 // Seed helper function
 export async function seedDatabaseIfEmpty() {

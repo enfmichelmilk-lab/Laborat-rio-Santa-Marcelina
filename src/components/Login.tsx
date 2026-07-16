@@ -80,9 +80,9 @@ export default function Login({
               <rect x='73' y='45' width='12' height='12' fill='#8fa9c4' opacity='0.7'/>
               <rect x='54' y='26' width='12' height='12' fill='#8fa9c4' opacity='0.7'/>
               <rect x='54' y='64' width='12' height='12' fill='#8fa9c4' opacity='0.7'/>
-              <path d='M41 33 H31 V57 H41 M79 33 H89 V57 H79 M41 69 V81 H79 V69' stroke='#003b73' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>
+              <path d='M41 33 H31 V57 H41 M79 33 H89 V57 H79 M41 69 V81 H79 V69' stroke='#003b73' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'/>
               <path d='M60 81 L60 41 M60 41 L50 49 L53 54 L60 48 L67 54 L70 49 Z' fill='#003b73'/>
-              <path d='M60 38 L54 44 M60 38 L66 44 M60 34 V38' stroke='#003b73' stroke-width='2' stroke-linecap='round'/>
+              <path d='M60 38 L54 44 M60 38 L66 44 M60 34 V38' stroke='#003b73' strokeWidth='2' strokeLinecap='round'/>
               <circle cx='54' cy='44' r='1.5' fill='#003b73'/>
               <circle cx='66' cy='44' r='1.5' fill='#003b73'/>
               <circle cx='60' cy='34' r='1.5' fill='#003b73'/>
