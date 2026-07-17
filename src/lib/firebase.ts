@@ -116,8 +116,13 @@ export async function seedDatabaseIfEmpty() {
       }
       console.log('Seeded branches.');
     }
-  } catch (error) {
-    console.error('Error seeding database:', error);
+  } catch (error: any) {
+    const isOffline = error?.message?.toLowerCase().includes('offline') || !navigator.onLine;
+    if (isOffline) {
+      console.log('Database seeding deferred: Client is currently offline.');
+    } else {
+      console.warn('Database seeding warning:', error);
+    }
   }
 }
 
