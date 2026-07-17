@@ -1,4 +1,11 @@
 // server.js
-// Entry point for Phusion Passenger (Hostinger / cPanel Node.js Selector)
+// Dual ESM and CommonJS loader for Phusion Passenger (Hostinger / cPanel Node.js Selector)
 // This boots our compiled production Express server bundle safely.
-import './dist/server.cjs';
+
+if (typeof require !== 'undefined') {
+  // We are in a CommonJS environment
+  require('./dist/server.cjs');
+} else {
+  // We are in an ES Module environment
+  import('./dist/server.cjs');
+}
